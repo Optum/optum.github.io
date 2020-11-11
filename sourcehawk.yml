@@ -1,33 +1,4 @@
 
-file-protocols:
-    - name: Attribution
-      repository-path: optum.github.io.attribution.txt
-    - name: Code of Conduct
-      repository-path: CODE_OF_CONDUCT.md
-      enforcers:
-        - enforcer: .common.ContainsLine
-          expected-line: '# Contributor Covenant Code of Conduct'
-        - enforcer: .common.ContainsLine
-          expected-line: '[homepage]: http://contributor-covenant.org'
-        - enforcer: .common.ContainsLine
-          expected-line: '[email]: mailto:opensource@optum.com'
-    - name: Contributing
-      repository-path: CONTRIBUTING.md
-      enforcers:
-        - enforcer: .common.ContainsLine
-          expected-line: '[email]: mailto:opensource@optum.com'
-    - name: Individual Contributor License
-      repository-path: INDIVIDUAL_CONTRIBUTOR_LICENSE.md
-      enforcers:
-        - enforcer: .common.ContainsLineMatchingAt
-          expected-line-pattern: '(.*)Individual Contributor License Agreement(.*)'
-          expected-line-number: 1
-    - name: License
-      repository-path: LICENSE
-    - name: README
-      repository-path: README.md
-      enforcers:
-        - enforcer: .common.ContainsLineMatching
-          expected-line-pattern: (.*)\[contribution instructions\]\(CONTRIBUTING.md\)(.*)
-        - enforcer: .common.ContainsLine
-          expected-line: Subject to our code of conduct [code of conduct](CODE_OF_CONDUCT.md)
+config-locations:
+  - https://raw.githubusercontent.com/optum/.github/main/sourcehawk.yml
+  
