@@ -7,7 +7,7 @@ file-protocols:
       required: false
       repository-path: attribution.txt
     - name: Attribution
-      repository-path: optum.github.io.attribution.txt
+      repository-path: '**/*attribution.txt'
     - name: Notice
       required: false
       repository-path: NOTICE.txt
