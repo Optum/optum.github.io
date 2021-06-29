@@ -8,23 +8,104 @@ module.exports = {
   projectName: "optumdocs", // Usually your repo name.
   themeConfig: {
     navbar: {
+      hideOnScroll: true,
       title: "Optum Open Source",
       logo: {
         alt: "Optum Logo",
         src: "img/Optum(R)_4C.png",
       },
       items: [
-        { to: "communities", label: "Our Projects", position: "left" },
+        {
+          label: "Open Source Program Office",
+          position: "left",
+          items: [
+            {
+              to: "contributors",
+              label: "Engineers",
+              position: "left",
+            },
+            { to: "communities", label: "Projects", position: "left" },
+
+            { to: "philsophy", label: "Philosophy", position: "left" },
+            {
+              to: "standards",
+              label: "Standards and Best Practices",
+              position: "left",
+            },
+          ],
+        },
+
+        {
+          label: "Blog",
+          position: "left",
+          items: [
+            {
+              label: "Employee Culture",
+              href: "/blogculture",
+            },
+            {
+              label: "Open Source",
+              href: "/blogopensource",
+            },
+            {
+              label: "ML/AI",
+              href: "/blogmlai",
+            },
+            {
+              label: "Tech Talks",
+              href: "/blogtechtalks",
+            },
+          ],
+        },
+        {
+          label: "Incubator",
+          position: "left",
+          items: [
+            {
+              label: "Project Highlights",
+              to: "incubatorhighlights",
+            },
+          ],
+        },
+        { to: "communities", label: "Communities", position: "left" },
         {
           to: "contributors",
-          label: "Our Engineers",
+          label: "Contributors",
           position: "left",
         },
         {
-          href: "https://www.youtube.com/watch?v=9sdASFlw0As",
-          label: "Why Contribute to Open Source?",
-          position: "right",
+          label: "Activities",
+          position: "left",
+          items: [
+            {
+              label: "Conferences",
+              to: "activityconferences",
+            },
+            {
+              label: "Events",
+              to: "activityevents",
+            },
+            {
+              label: "Competition",
+              to: "activitycompetition",
+            },
+          ],
         },
+        {
+          label: "Learning",
+          position: "left",
+          items: [
+            {
+              label: "OTU",
+              to: "learningotu",
+            },
+          ],
+        },
+        // {
+        //   href: "https://www.youtube.com/watch?v=9sdASFlw0As",
+        //   label: "Why Contribute to Open Source?",
+        //   position: "right",
+        // },
         {
           href: "https://github.com/Optum",
           label: "GitHub",
@@ -113,6 +194,80 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "second-blog",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "blogculture",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./blogculture",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "first-blog",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "blogopensource",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./blogopensource",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "ml-blog",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "blogmlai",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./blogmlai",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "third-blog",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "blogtechtalks",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./blogtechtalks",
       },
     ],
   ],
