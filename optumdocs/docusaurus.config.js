@@ -108,7 +108,8 @@ module.exports = {
         // },
         {
           href: "https://github.com/Optum",
-          label: "GitHub",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
           position: "right",
         },
       ],
